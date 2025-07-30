@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FASTFOOD</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            scroll-behavior: smooth;
+            background-color: #05030f;
+        }
+
+        .header {
+            background-color: #ffffff;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .logo img {
+            max-height: 90px; /* Ajusta la altura máxima del logo */
+            width: auto;      
+        }
+
+        .nav {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-button {
+            color: rgb(12, 12, 12);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .nav-button:hover {
+            background-color: rgba(112, 87, 187, 0.801); /* crusor */
+        }
+
+        .nav-button.active {
+            background-color: #c8bbe3;
+            color: #00332b;
+        }
+
+        .hero {
+            background: linear-gradient(90deg, #fffefd 50%, transparent 50%);
+            padding: 4rem 2rem;
+            display: flex;
+            position: relative;
+            min-height: 70vh;
+            margin-top: 70px; /* For fixed header spacing */
+        }
+
+        .hero-content {
+            width: 50%;
+            padding-right: 2rem;
+        }
+
+        .hero-image {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 50%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.8;
+        }
+
+        .main-title {
+            font-size: 3rem;
+            color: #67541b;
+            margin-bottom: 1rem;
+        }
+
+        .sub-title {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .main-card {
+            background: rgb(247, 247, 225);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .content {
+            flex: 1;
+        }
+
+        .image {
+            flex: 0 0 400px;
+        }
+
+        .image img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        h1 {
+            color: #1a1a1a;
+            margin-top: 0;
+        }
+
+        p {
+            color: #4a4a4a;
+            line-height: 1.6;
+        }
+
+        .button {
+            display: inline-block;
+            background-color: #a3e199;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        .buttons-container {
+            display: flex;
+            gap: 20px;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .action-button {
+            flex: 1;
+            text-align: center;
+            padding: 20px;
+            border-radius: 15px;
+            color: white;
+            text-decoration: none;
+        }
+
+        .dark {
+            background-color: #dbcea1;
+        }
+
+        .light {
+            background-color: #363631;
+        }
+
+        .button-text {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .button-subtext {
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+
+        .footer-text {
+            text-align: center;
+            padding: 2rem;
+            font-size: 1.5rem;
+            color: #666;
+        }
+
+        .green-text {
+            color: #006400;
+        }
+        .description {
+    margin-top: -10px;
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+    color: #555;
+}
+
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="images/imagen9.png" alt="Logo">
+        </div>
+        <nav class="nav">
+            <a href="#inicio" class="nav-button active">Home</a>
+            <a href="#permiso" class="nav-button">ENTER INGREDIENTS</a>
+        
+            <a href="#consultar" class="nav-button">SCAN RECEIPT </a>
+            <a href="#preguntas" class="nav-button">SHARE RECIPES</a>
+        </nav>
+    </header>
+
+    <main id="inicio" class="hero">
+        <div class="hero-content">
+            <h1 class="main-title">Your Best Recipes, Based on What You Have!</h1>
+            <p class="sub-title">FASTFOOD lets you create delicious recipes based on what's in your kitchen!</p>
+             <section class="container">
+        <div class="main-card">
+            <div class="content">
+                <h1>Interactive Recipe Hub: Cook with What You Already Have</h1>
+                <p>Not sure what to cook today? Our Interactive Recipe Hub helps you create delicious meals using only the ingredients you already have at home. Just enter what you have on hand and get smart suggestions for dishes you can make right away.</p>
+                <p>You can also upload your own recipes, rate them, and share them with others.
+Bought something at the store and don't know how to use it? Scan your receipt or use your camera to detect ingredients and get instant meal ideas. Cooking has never been so easy and personalized!</p>
+                
+            </div>
+      
+        </div>
+        <img src="images/imagen3.jpg" alt="Happy people eating" class="hero-image">
+    </main>
+
+    <section class="container">
+        <div class="main-card">
+            <div class="content">
+                <h1>Popular Recipes</h1>
+                 <p class="sub-title">🌮 Cheesy Tacos – ★ 4.7</p>
+                 
+                   <p class="sub-title">🥗 Veggie Bowl – ★ 4.5</p>
+                   
+                   <p class="sub-title">🍔 Easy Homemade Burger – ★ 4.8</p>
+                   <p class="sub-title">🍝 One-Pot Pasta – ★ 4.6</p>
+                   <p class="sub-title">🧁 Ingredient Cupcakes – ★ 4.8</p>
+                   <p class="sub-title"></p>
+                   <p class="sub-title"></p>
+                
+                
+                <a href="#" class="button">See All Recipes</a>
+            </div>
+            <div class="image">
+                <img src="images/imagen10.jpg" alt="Recipe collection">
+            </div>
+        </div>
+
+     <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Chef - Recipe Generator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #a2e3c7 0%, #d8d4dc 100%);
+        }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .ingredient-tag {
+            animation: fadeInUp 0.5s ease-out;
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .recipe-card {
+            transform: translateY(20px);
+            opacity: 0;
+            animation: slideUp 0.6s ease-out forwards;
+        }
+        @keyframes slideUp {
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        .floating-icon {
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+    </style>
+</head>
+<body class="min-h-screen gradient-bg">
+    <!-- Hero Section -->
+    <div class="relative pt-16 pb-8">
+        <div class="absolute inset-0 bg-black opacity-10"></div>
+        <div class="relative z-10 text-center text-white">
+            <div class="floating-icon inline-block text-6xl mb-4">
+                <i class="fas fa-utensils"></i>
+            </div>
+            <h1 class="text-5xl font-bold mb-4">Virtual Chef</h1>
+            <p class="text-xl opacity-90">Transform your ingredients into delicious recipes</p>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <section class="max-w-4xl mx-auto px-4 pb-16">
+        <!-- Input Card -->
+        <div class="glass-effect rounded-3xl p-8 mb-8 shadow-2xl">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-2">
+                    <i class="fas fa-seedling text-green-500 mr-2"></i>
+                    What ingredients do you have?
+                </h2>
+                <p class="text-gray-600">Enter the ingredients you have available and discover what you can cook</p>
+            </div>
+            
+            <!-- Input Section -->
+            <div class="relative mb-6">
+                <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                    <i class="fas fa-search text-gray-400"></i>
+                </div>
+                <input
+                    id="ingredientes"
+                    type="text"
+                    placeholder="e.g. rice, chicken, tomato, onion..."
+                    class="w-full pl-12 pr-4 py-4 border-2 border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-transparent transition-all duration-300 text-lg"
+                />
+            </div>
+
+            <!-- Ingredient Tags -->
+            <div id="ingredient-tags" class="mb-6 min-h-[40px]"></div>
+
+            <!-- Generate Button -->
+            <button
+                onclick="generarReceta()"
+                class="w-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white font-bold py-4 px-8 rounded-2xl transition-all duration-300 transform hover:scale-105 shadow-lg text-lg"
+            >
+                <i class="fas fa-magic mr-2"></i>
+                GENERATE MAGIC RECIPE
+            </button>
+        </div>
+
+        <!-- Loading Animation -->
+        <div id="loading" class="hidden text-center mb-8">
+            <div class="inline-block animate-spin rounded-full h-12 w-12 border-4 border-white border-t-purple-500"></div>
+            <p class="text-white mt-4 text-lg">Creating your perfect recipe...</p>
+        </div>
+
+        <!-- Results Card -->
+        <div id="resultado" class="glass-effect rounded-3xl p-8 shadow-2xl hidden recipe-card">
+            <div class="text-center mb-6">
+                <div class="text-4xl mb-4">
+                    <i class="fas fa-crown text-yellow-500"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-800">Your Personalized Recipe</h3>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Recipe Info -->
+                <div>
+                    <div class="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-6 mb-4">
+                        <h4 class="text-xl font-bold text-gray-800 mb-2 flex items-center">
+                            <i class="fas fa-utensils text-blue-500 mr-2"></i>
+                            <span id="nombre-receta"></span>
+                        </h4>
+                        <div class="flex items-center text-gray-600 mb-2">
+                            <i class="fas fa-clock mr-2"></i>
+                            <span id="tiempo-receta">30 minutes</span>
+                        </div>
+                        <div class="flex items-center text-gray-600">
+                            <i class="fas fa-users mr-2"></i>
+                            <span id="porciones-receta">4 servings</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Ingredients List -->
+                    <div class="bg-gradient-to-r from-green-50 to-blue-50 rounded-2xl p-6">
+                        <h4 class="text-lg font-bold text-gray-800 mb-4 flex items-center">
+                            <i class="fas fa-list-ul text-green-500 mr-2"></i>
+                            Required Ingredients
+                        </h4>
+                        <div id="ingredientes-receta" class="text-gray-700"></div>
+                    </div>
+                </div>
+                
+                <!-- Preparation Steps -->
+                <div class="bg-gradient-to-r from-orange-50 to-red-50 rounded-2xl p-6">
+                    <h4 class="text-lg font-bold text-gray-800 mb-4 flex items-center">
+                        <i class="fas fa-fire text-orange-500 mr-2"></i>
+                        Preparation
+                    </h4>
+                    <div id="preparacion-receta" class="text-gray-700"></div>
+                </div>
+            </div>
+            
+            <!-- Action Buttons -->
+            <div class="flex flex-wrap gap-4 mt-8 justify-center">
+                <button onclick="generarOtraReceta()" class="bg-white border-2 border-purple-500 text-purple-500 hover:bg-purple-500 hover:text-white px-6 py-3 rounded-xl transition-all duration-300 flex items-center">
+                    <i class="fas fa-redo mr-2"></i>
+                    Generate Another
+                </button>
+                <button onclick="compartirReceta()" class="bg-gradient-to-r from-green-500 to-blue-500 hover:from-green-600 hover:to-blue-600 text-white px-6 py-3 rounded-xl transition-all duration-300 flex items-center">
+                    <i class="fas fa-share mr-2"></i>
+                    Share
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        let currentIngredients = [];
+
+        // Recipe database
+        const recetas = {
+            'rice': {
+                nombre: 'Mediterranean Rice',
+                ingredientes: ['rice', 'olive oil', 'garlic', 'onion', 'tomato', 'bell pepper', 'chicken broth'],
+                preparacion: [
+                    'Sauté the onion and garlic in olive oil until golden',
+                    'Add the tomato and bell pepper, cook for 5 minutes',
+                    'Add the rice and stir for 2 minutes',
+                    'Add hot broth and cook for 18 minutes on medium heat',
+                    'Let rest for 5 minutes before serving'
+                ],
+                tiempo: '25 minutes',
+                porciones: '4 servings'
+            },
+            'chicken': {
+                nombre: 'Lemon Herb Chicken',
+                ingredientes: ['chicken', 'lemon', 'olive oil', 'garlic', 'rosemary', 'thyme', 'salt', 'pepper'],
+                preparacion: [
+                    'Marinate chicken with lemon, oil and herbs for 30 minutes',
+                    'Preheat oven to 200°C (400°F)',
+                    'Sear chicken in a pan until golden',
+                    'Transfer to oven and cook for 25-30 minutes',
+                    'Let rest before serving with cooking juices'
+                ],
+                tiempo: '45 minutes',
+                porciones: '4 servings'
+            },
+            'pasta': {
+                nombre: 'Primavera Pasta',
+                ingredientes: ['pasta', 'olive oil', 'garlic', 'onion', 'carrot', 'zucchini', 'cherry tomatoes', 'parmesan cheese'],
+                preparacion: [
+                    'Cook pasta according to package instructions',
+                    'Sauté julienned vegetables with garlic and onion',
+                    'Add cherry tomatoes and cook until softened',
+                    'Mix pasta with vegetables',
+                    'Serve with grated parmesan cheese on top'
+                ],
+                tiempo: '20 minutes',
+                porciones: '3 servings'
+            }
+        };
+
+        // Update ingredient tags as user types
+        document.getElementById('ingredientes').addEventListener('input', function() {
+            const value = this.value.toLowerCase();
+            const ingredientes = value.split(',').map(ing => ing.trim()).filter(ing => ing.length > 0);
+            updateIngredientTags(ingredientes);
+        });
+
+        function updateIngredientTags(ingredientes) {
+            const tagsContainer = document.getElementById('ingredient-tags');
+            if (ingredientes.length === 0) {
+                tagsContainer.innerHTML = '';
+                return;
+            }
+            
+            const tagsHTML = ingredientes.map(ing => 
+                `<span class="ingredient-tag inline-block bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm mr-2 mb-2">
+                    <i class="fas fa-leaf mr-1"></i>${ing}
+                </span>`
+            ).join('');
+            
+            tagsContainer.innerHTML = tagsHTML;
+        }
+
+        function generarReceta() {
+            const entrada = document.getElementById("ingredientes").value.trim().toLowerCase();
+            if (!entrada) {
+                alert('Please enter at least one ingredient');
+                return;
+            }
+
+            // Show loading
+            document.getElementById("loading").classList.remove("hidden");
+            document.getElementById("resultado").classList.add("hidden");
+
+            // Simulate API delay
+            setTimeout(() => {
+                const resultado = document.getElementById("resultado");
+                const nombre = document.getElementById("nombre-receta");
+                const ingredientes = document.getElementById("ingredientes-receta");
+                const preparacion = document.getElementById("preparacion-receta");
+                const tiempo = document.getElementById("tiempo-receta");
+                const porciones = document.getElementById("porciones-receta");
+
+                // Find matching recipe
+                let recetaSeleccionada = null;
+                for (const [key, receta] of Object.entries(recetas)) {
+                    if (entrada.includes(key)) {
+                        recetaSeleccionada = receta;
+                        break;
+                    }
+                }
+
+                // Default recipe if no match
+                if (!recetaSeleccionada) {
+                    recetaSeleccionada = {
+                        nombre: 'Chef\'s Fresh Salad',
+                        ingredientes: entrada.split(',').map(ing => ing.trim()).concat(['lettuce', 'olive oil', 'vinegar', 'salt']),
+                        preparacion: [
+                            'Wash and cut all fresh ingredients',
+                            'Mix in a large bowl',
+                            'Dress with olive oil, vinegar and salt to taste',
+                            'Serve immediately to maintain freshness'
+                        ],
+                        tiempo: '15 minutes',
+                        porciones: '2 servings'
+                    };
+                }
+
+                // Populate recipe details
+                nombre.textContent = recetaSeleccionada.nombre;
+                tiempo.textContent = recetaSeleccionada.tiempo;
+                porciones.textContent = recetaSeleccionada.porciones;
+
+                // Format ingredients
+                const ingredientesHTML = recetaSeleccionada.ingredientes.map(ing => 
+                    `<div class="flex items-center mb-2">
+                        <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                        <span>${ing}</span>
+                    </div>`
+                ).join('');
+                ingredientes.innerHTML = ingredientesHTML;
+
+                // Format preparation steps
+                const preparacionHTML = recetaSeleccionada.preparacion.map((paso, index) => 
+                    `<div class="flex mb-3">
+                        <div class="flex-shrink-0 w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center text-sm font-bold mr-3">
+                            ${index + 1}
+                        </div>
+                        <p class="text-gray-700">${paso}</p>
+                    </div>`
+                ).join('');
+                preparacion.innerHTML = preparacionHTML;
+
+                // Hide loading and show result
+                document.getElementById("loading").classList.add("hidden");
+                resultado.classList.remove("hidden");
+                
+                // Scroll to result
+                resultado.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }, 1500);
+        }
+
+        function generarOtraReceta() {
+            document.getElementById("ingredientes").value = '';
+            document.getElementById("ingredient-tags").innerHTML = '';
+            document.getElementById("resultado").classList.add("hidden");
+            document.getElementById("ingredientes").focus();
+        }
+
+        function compartirReceta() {
+            const nombre = document.getElementById("nombre-receta").textContent;
+            const shareText = `I just generated a delicious recipe: ${nombre}! 🍽️ #VirtualChef`;
+            
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Virtual Chef - ' + nombre,
+                    text: shareText,
+                    url: window.location.href
+                });
+            } else {
+                // Fallback for browsers that don't support Web Share API
+                navigator.clipboard.writeText(shareText + ' - ' + window.location.href).then(() => {
+                    alert('Recipe copied to clipboard!');
+                });
+            }
+        }
+
+        // Add enter key support
+        document.getElementById('ingredientes').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                generarReceta();
+            }
+        });
+    </script>
+</body>
+</html>
+        </div>
+    </section>
+
+    <footer class="footer-text">
+        Made with ❤️ by <span class="green-text">Pablo Ortiz and Prestegui Cruz</span>
+    </footer>
+</body>
+</html>
